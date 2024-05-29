@@ -31,5 +31,10 @@ write-host ""
 
 # Delete all auxiliary files and notify user.
 ls *.aux -Recurse | foreach {rm $_}
-write-host "aux files deleted."
+ls *.nav -Recurse | foreach {rm $_}
+ls *.out -Recurse | foreach {rm $_}
+ls *.snm -Recurse | foreach {rm $_}
+ls *.toc -Recurse | foreach {rm $_}
+
+write-host "LaTeX cleanup completed."
 write-host ""
