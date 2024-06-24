@@ -225,8 +225,15 @@
   This should be relatively easy compared to the other components as we are not planning on creating any new
   architectures ourselves.
   \begin{itemize}
-  \item model architecture
-  \item choosing which LoRA modules to use
+    \item model architecture
+    \item choosing which LoRA modules to use
+    \item visualization/debugging
+    \begin{itemize}
+      \item gradient histograms
+      \item activation histograms
+      \item attention head visualization
+      \item GPU utilization, etc.
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -254,16 +261,13 @@
 
 \begin{frame}{Inference}
 
-  The final component will be \texttt{inference.py} file that gets the data and serves it.
-  Currently, this is the \texttt{pseudo-PhoNet} library.
-  Some components we'll have to work on are:
-  \begin{itemize}
-  \item 
-  \end{itemize}
+  The final component will be \texttt{inference.py} file, which takes a file, makes a
+  prediction, and returns the prediction.
+  The inputs will be the \texttt{data.py}, mainly the transforms used in that file, and
+  \texttt{model.py}.
+  This may end up being rolled into \texttt{model.py}.
 \end{frame}
 
-\begin{frame}{Make Titles Informative.}
-\end{frame}
 
 \section*{Summary}
 
@@ -271,13 +275,15 @@
 
   % Keep the summary *very short*.
   \begin{itemize}
-  \item
-    Their \alert{typically four components} of a machine learning project.
-  \item
+    \item
+    There are \alert{typically four components} of a machine learning project.
+    \item
+    In order of priority, \texttt{data.py}, \texttt{train.py}, \texttt{model.py},
+    \texttt{inference.py}.
+    \item
     The focus is on the \alert{data and model} portions of the project.
   \end{itemize}
   
 \end{frame}
-
 
 \end{document}
